@@ -3,6 +3,7 @@
 	"displayName": "kevtools",
 	"description": "",
 	"version": "0.0.1",
+	"publisher": "KevinAudleman",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
