@@ -13,14 +13,23 @@ export function activate(context: vscode.ExtensionContext) {
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
 	// The commandId parameter must match the command field in package.json
-	let disposable = vscode.commands.registerCommand('kevtools.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Sup everybody!');
+	let disposable = vscode.commands.registerCommand('kevtools.parseLogs', () => {
+		formatLogs(vscode.window.activeTextEditor);
 	});
-
 	context.subscriptions.push(disposable);
+}
+
+export function formatLogs(editor: vscode.TextEditor|undefined): void {
+	if (!editor || !editor.document)
+		return;
+	try {
+		vscode.languages.setTextDocumentLanguage(editor.document, 'json');
+		vscode.commands.executeCommand('editor.action.formatDocument');
+		vscode.commands.executeCommand('editor.action.startFindReplaceAction', 'ver', 'KEVIN');
+		vscode.window.showInformationMessage('parsed');
+	} catch (err) {
+		console.error(err);
+	}
 }
 
 // this method is called when your extension is deactivated

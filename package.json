@@ -12,14 +12,14 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:kevtools.helloWorld"
+		"onCommand:kevtools.parseLogs"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "kevtools.helloWorld",
-				"title": "Hello World"
+				"command": "kevtools.parseLogs",
+				"title": "Parse logs"
 			}
 		]
 	},
