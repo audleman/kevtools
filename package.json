@@ -4,6 +4,7 @@
 	"description": "",
 	"version": "0.0.1",
 	"publisher": "KevinAudleman",
+	"repository": "https://github.com/audleman/kevtools",
 	"engines": {
 		"vscode": "^1.53.0"
 	},
